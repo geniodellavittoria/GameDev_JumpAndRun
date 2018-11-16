@@ -45,7 +45,7 @@ namespace Assets.GameObjects.Character
         {
             get
             {
-                return _height;
+                return _speed;
             }
             set
             {

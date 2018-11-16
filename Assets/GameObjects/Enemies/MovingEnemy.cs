@@ -28,7 +28,7 @@ namespace Assets.GameObjects.Enemies
         {
             get
             {
-                return _height;
+                return _speed;
             }
             set
             {
