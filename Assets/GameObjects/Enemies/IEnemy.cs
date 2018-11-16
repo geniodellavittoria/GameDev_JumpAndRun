@@ -3,8 +3,8 @@ using Assets.GameObjects.GameCharacter;
 
 namespace Assets.GameObjects.Enemies
 {
-    public interface IEnemy: IGameCharacter
+    public interface IEnemy : IGameCharacter
     {
-        void Move();
+
     }
 }

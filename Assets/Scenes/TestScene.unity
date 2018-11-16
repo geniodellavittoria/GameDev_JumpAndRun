@@ -2343,6 +2343,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35f320604805f40c9a1646b2960f9774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _height: 0
+  _speed: 30
+  _life: 50
+  _strength: 10
+  _isEnemy: 1
+  _isDead: 0
 --- !u!1 &1537838323
 GameObject:
   m_ObjectHideFlags: 0
