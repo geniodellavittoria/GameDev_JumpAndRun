@@ -5,6 +5,6 @@ namespace Assets.GameObjects.Hero
 {
     public interface IHero : IGameCharacter
     {
-
+        void Jump();
     }
 }

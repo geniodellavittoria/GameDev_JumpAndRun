@@ -1,4 +1,5 @@
-﻿namespace Assets.GameObjects.GameCharacter
+﻿
+namespace Assets.GameObjects.GameCharacter
 {
     public interface IGameCharacter
     {
@@ -6,16 +7,13 @@
         double Speed { get; set; }
         double Life { get; set; }
         double Strength { get; set; }
-        bool IsEnemy { get; set; }
         bool IsDead { get; set; }
-
-        void Jump();
-
-
 
         void Attack();
 
         void Die();
+
+        void Move();
 
         void TakeDamage(double damage);
     }
