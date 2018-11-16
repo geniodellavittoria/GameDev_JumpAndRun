@@ -3,10 +3,11 @@ using UnityEngine;
 
 namespace Application
 {
-    public class ScriptableCharacter : ScriptableObject, ICharacter
+    public class ScriptableCharacter : MonoBehaviour, ICharacter
     {
         public ScriptableCharacter()
         {
+
         }
 
 
@@ -22,29 +23,30 @@ namespace Application
 
         public bool IsDead { get; set; }
 
-        public void attack()
+        public void Attack()
         {
             throw new NotImplementedException();
         }
 
-        public void die()
+        public void Die()
+        {
+
+            IsDead = true;
+        }
+
+        public void Jump()
         {
             throw new NotImplementedException();
         }
 
-        public void jump()
+        public void Move()
         {
             throw new NotImplementedException();
         }
 
-        public void move()
+        public void TakeDamage(double damage)
         {
-            throw new NotImplementedException();
-        }
-
-        public void takeDamage()
-        {
-            throw new NotImplementedException();
+            Life -= damage;
         }
     }
 }

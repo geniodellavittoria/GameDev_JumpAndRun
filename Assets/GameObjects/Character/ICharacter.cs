@@ -9,14 +9,14 @@
         bool IsEnemy { get; set; }
         bool IsDead { get; set; }
 
-        void jump();
+        void Jump();
 
-        void move();
+        void Move();
 
-        void attack();
+        void Attack();
 
-        void die();
+        void Die();
 
-        void takeDamage();
+        void TakeDamage(double damage);
     }
 }
