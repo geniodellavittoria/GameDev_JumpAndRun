@@ -1,6 +1,6 @@
-﻿namespace Assets.GameObjects.Character
+﻿namespace Assets.GameObjects.GameCharacter
 {
-    public interface ICharacter
+    public interface IGameCharacter
     {
         double Height { get; set; }
         double Speed { get; set; }
@@ -11,7 +11,7 @@
 
         void Jump();
 
-        void Move();
+
 
         void Attack();
 
