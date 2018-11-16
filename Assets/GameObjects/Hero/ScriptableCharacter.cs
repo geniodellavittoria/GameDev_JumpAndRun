@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.GameObjects.Character
 {
-    public class ScriptableCharacter : MonoBehaviour, ICharacter
+    public class ScriptableCharacter : MonoBehaviour
     {
         public ScriptableCharacter()
         {
