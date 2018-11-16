@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Application
+namespace Assets.GameObjects.Character
 {
     public class ScriptableCharacter : MonoBehaviour, ICharacter
     {

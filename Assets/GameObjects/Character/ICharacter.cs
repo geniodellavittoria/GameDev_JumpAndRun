@@ -1,4 +1,4 @@
-﻿namespace Application
+﻿namespace Assets.GameObjects.Character
 {
     public interface ICharacter
     {
