@@ -1,9 +1,10 @@
 ﻿using System;
+using Assets.GameObjects.Hero;
 using UnityEngine;
 
 namespace Assets.GameObjects.Character
 {
-    public class ScriptableCharacter : MonoBehaviour, ICharacter
+    public class ScriptableCharacter : MonoBehaviour, IHero
     {
         public ScriptableCharacter()
         {
