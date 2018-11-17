@@ -1,10 +1,12 @@
 ﻿
+using UnityEngine;
+
 namespace Assets.GameObjects.GameCharacter
 {
     public interface IGameCharacter
     {
-        double Height { get; set; }
-        double Speed { get; set; }
+
+        float Speed { get; set; }
         double Life { get; set; }
         double Strength { get; set; }
         bool IsDead { get; set; }
@@ -13,7 +15,7 @@ namespace Assets.GameObjects.GameCharacter
 
         void Die();
 
-        void Move();
+        void Move(GameObject gameObject);
 
         void TakeDamage(double damage);
     }

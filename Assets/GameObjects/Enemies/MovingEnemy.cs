@@ -5,12 +5,10 @@ namespace Assets.GameObjects.Enemies
 {
     public class MovingEnemy : MonoBehaviour, IEnemy
     {
-        public MovingEnemy()
-        {
-        }
+
 
         [SerializeField]
-        private double _speed;
+        private float _speed;
 
         [SerializeField]
         private double _life;
@@ -24,7 +22,9 @@ namespace Assets.GameObjects.Enemies
         [SerializeField]
         private bool _isDead;
 
-        public double Speed
+        private bool MovingForward = true;
+
+        public float Speed
         {
             get
             {
@@ -84,6 +84,11 @@ namespace Assets.GameObjects.Enemies
             }
         }
 
+        public MovingEnemy()
+        {
+
+        }
+
         public void Attack()
         {
             throw new NotImplementedException();
@@ -94,14 +99,41 @@ namespace Assets.GameObjects.Enemies
             throw new NotImplementedException();
         }
 
-        public void Move()
+        public void Move(GameObject gameObject)
         {
-            throw new NotImplementedException();
+            if (MovingForward)
+            {
+                var newPosition = transform.position.x + _speed;
+                //Physics.CheckBox(new Vector2(newPositon, transform.position.y))
+                transform.position = new Vector2(newPosition, transform.position.y);
+            }
+            else
+            {
+                transform.position = new Vector2(transform.position.x - _speed, transform.position.y);
+
+            }
+            //transform.Translate(Vector2. .forward * Time.deltaTime);
         }
 
         public void TakeDamage(double damage)
         {
             throw new NotImplementedException();
+        }
+
+        void Update()
+        {
+            Move(gameObject);
+        }
+
+        void OnCollisionEnter(Collision collision)
+        {
+            MovingForward = !MovingForward;
+            collision.rigidbody.isKinematic = true;
+        }
+
+        void OnCollisionExit(Collision collision)
+        {
+            collision.rigidbody.isKinematic = false;
         }
 
 

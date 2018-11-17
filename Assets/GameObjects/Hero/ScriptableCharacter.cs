@@ -14,7 +14,7 @@ namespace Assets.GameObjects.Character
         private double _height;
 
         [SerializeField]
-        private double _speed;
+        private float _speed;
 
         [SerializeField]
         private double _life;
@@ -41,7 +41,7 @@ namespace Assets.GameObjects.Character
             }
         }
 
-        public double Speed
+        public float Speed
         {
             get
             {
@@ -116,7 +116,7 @@ namespace Assets.GameObjects.Character
             throw new NotImplementedException();
         }
 
-        public void Move()
+        public void Move(GameObject gameObject)
         {
             throw new NotImplementedException();
         }
