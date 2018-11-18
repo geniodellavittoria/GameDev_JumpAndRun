@@ -116,7 +116,7 @@ namespace Assets.GameObjects.Character
             throw new NotImplementedException();
         }
 
-        public void Move(GameObject gameObject)
+        public void Move()
         {
             throw new NotImplementedException();
         }

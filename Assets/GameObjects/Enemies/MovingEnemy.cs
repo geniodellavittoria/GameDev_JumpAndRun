@@ -99,7 +99,7 @@ namespace Assets.GameObjects.Enemies
             throw new NotImplementedException();
         }
 
-        public void Move(GameObject gameObject)
+        public void Move()
         {
             if (MovingForward)
             {
@@ -122,7 +122,7 @@ namespace Assets.GameObjects.Enemies
 
         void Update()
         {
-            Move(gameObject);
+            Move();
         }
 
         void OnCollisionEnter(Collision collision)
