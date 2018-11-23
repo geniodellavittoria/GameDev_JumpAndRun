@@ -112,6 +112,7 @@ namespace Assets.GameObjects.Enemies
 
         void Update()
         {
+            Move();
         }
 
         void OnCollisionEnter(Collision collision)
