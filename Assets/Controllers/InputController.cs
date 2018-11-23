@@ -7,12 +7,11 @@ namespace Assets.Controllers
     public class InputController :MonoBehaviour
     {
         public event Action Jump = delegate { };
-        public event Action Move = delegate { };
+        public event Action MoveBack = delegate { };
+        public event Action MoveForward = delegate { };
         public event Action Shoot = delegate { };
 
         protected static InputController s_Instance;
-        [SerializeField]
-        private GameObject hero;
 
         public static InputController Instance
         {
@@ -33,11 +32,11 @@ namespace Assets.Controllers
             }
             if (Input.GetKey(KeyCode.A))
             {
-                Move();   
+                MoveForward();   
             }
             if (Input.GetKey(KeyCode.D))
             {
-                Move();
+                MoveBack();
             }
         }
 
