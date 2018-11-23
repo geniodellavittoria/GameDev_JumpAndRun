@@ -1,4 +1,5 @@
 ﻿using System;
+using Assets.Controllers;
 using Assets.GameObjects.Hero;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace Assets.GameObjects.Character
     {
         public ScriptableCharacter()
         {
+            
         }
 
         [SerializeField]
@@ -27,6 +29,11 @@ namespace Assets.GameObjects.Character
 
         [SerializeField]
         private bool _isDead;
+        private Rigidbody rb;
+        private SphereCollider col;
+        private float jumpForce = 7;
+        float runSpeed = 10;
+        float horizontalMove = 0f;
 
         public double Height
         {
@@ -100,7 +107,19 @@ namespace Assets.GameObjects.Character
                 _isDead = value;
             }
         }
+        
+        void Start()
+        {
+            inputController.Move += this.Move;
+            inputController.Jump += this.Jump;
+            rb = GetComponent<Rigidbody>();
+            col = GetComponent<SphereCollider>();
+        }
 
+        void Update()
+        {
+
+        }
         public void Attack()
         {
             throw new NotImplementedException();
@@ -113,14 +132,17 @@ namespace Assets.GameObjects.Character
 
         public void Jump()
         {
-            throw new NotImplementedException();
+            rb.AddForce(Vector2.up * jumpForce);
         }
 
-        public void Move(GameObject gameObject)
+
+        public void Move()
         {
-            throw new NotImplementedException();
-        }
+            horizontalMove = Input.GetAxis("Horizontal") + runSpeed;
 
+            
+        }
+        
         public void TakeDamage(double damage)
         {
             throw new NotImplementedException();

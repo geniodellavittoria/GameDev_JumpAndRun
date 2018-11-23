@@ -5,8 +5,6 @@ namespace Assets.GameObjects.Enemies
 {
     public class MovingEnemy : MonoBehaviour, IEnemy
     {
-
-
         [SerializeField]
         private float _speed;
 
@@ -99,19 +97,11 @@ namespace Assets.GameObjects.Enemies
             throw new NotImplementedException();
         }
 
-        public void Move(GameObject gameObject)
+        public void Move()
         {
-            if (MovingForward)
-            {
-                var newPosition = transform.position.x + _speed;
+            var newPosition = transform.position.x + _speed;
                 //Physics.CheckBox(new Vector2(newPositon, transform.position.y))
                 transform.position = new Vector2(newPosition, transform.position.y);
-            }
-            else
-            {
-                transform.position = new Vector2(transform.position.x - _speed, transform.position.y);
-
-            }
             //transform.Translate(Vector2. .forward * Time.deltaTime);
         }
 
@@ -122,7 +112,6 @@ namespace Assets.GameObjects.Enemies
 
         void Update()
         {
-            Move(gameObject);
         }
 
         void OnCollisionEnter(Collision collision)
@@ -135,7 +124,5 @@ namespace Assets.GameObjects.Enemies
         {
             collision.rigidbody.isKinematic = false;
         }
-
-
     }
 }

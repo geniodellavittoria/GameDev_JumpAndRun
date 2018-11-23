@@ -15,7 +15,7 @@ namespace Assets.GameObjects.GameCharacter
 
         void Die();
 
-        void Move(GameObject gameObject);
+        void Move();
 
         void TakeDamage(double damage);
     }
